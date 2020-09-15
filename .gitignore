@@ -1,0 +1,7 @@
+/.idea/
+/hoxton-api/target/classes/
+/hoxton-api/hoxton-api.iml
+/hoxton-services/hoxton-services.iml
+/hoxton-services/target/classes/
+/hoxton-user/target/classes/
+/hoxton-user/hoxton-user.iml
