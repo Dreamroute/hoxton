@@ -1,6 +1,4 @@
 server:
-  servlet:
-    context-path: /hoxton-user
   port: 8081
 spring:
   application:
@@ -13,4 +11,4 @@ spring:
         prefer-ip-address: true
         health-check-interval: 10s
         instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
-        health-check-path: ${server.servlet.context-path}/health
+        health-check-path: /health

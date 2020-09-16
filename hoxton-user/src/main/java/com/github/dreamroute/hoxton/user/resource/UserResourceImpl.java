@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserResourceImpl implements UserResource {
     @Override
     public String selectById() {
+        System.err.println("bdfint.");
+        System.err.println("w.dehai");
         return "bdfint";
     }
 }
