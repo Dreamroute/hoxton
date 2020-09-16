@@ -5,3 +5,5 @@
 /hoxton-services/target/classes/
 /hoxton-user/target/classes/
 /hoxton-user/hoxton-user.iml
+/hoxton-api/.rebel.xml.bak
+/hoxton-user/.rebel.xml.bak

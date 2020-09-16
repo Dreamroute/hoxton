@@ -1,17 +1,14 @@
 package com.github.dreamroute.hoxton.api;
 
-import cn.hutool.extra.servlet.ServletUtil;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.cloud.openfeign.FeignClientProperties.FeignClientConfiguration;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.ServletRequest;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author w.dehai
@@ -19,7 +16,7 @@ import java.time.format.DateTimeFormatter;
 @EnableDiscoveryClient
 @SpringBootApplication
 @RestController
-@EnableFeignClients(basePackages = {"com.github.dreamroute.hoxton.service"})
+@EnableFeignClients(basePackages = {"com.github.dreamroute.hoxton.service"}, defaultConfiguration = FeignClientConfiguration.class)
 public class HoxtonApi {
 
     public static void main(String[] args) {
@@ -27,9 +24,7 @@ public class HoxtonApi {
     }
 
     @RequestMapping("/health")
-    public boolean health(ServletRequest request) {
-        String body = ServletUtil.getBody(request);
-        System.err.println(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd:hh:mm:ss")));
+    public boolean health(HttpServletRequest request) {
         return true;
     }
 

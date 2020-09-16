@@ -6,8 +6,8 @@ spring:
     name: hoxton-api
   cloud:
     consul:
-      host: 10.82.12.238
-      port: 8503
+      host: 10.82.12.242
+      port: 8500
       discovery:
         prefer-ip-address: true
         health-check-interval: 10s
