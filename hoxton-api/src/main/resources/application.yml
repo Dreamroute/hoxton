@@ -6,10 +6,24 @@ spring:
     name: hoxton-api
   cloud:
     consul:
-      host: 10.82.12.242
-      port: 8500
+      host: 10.82.12.238
+      port: 8503
       discovery:
         prefer-ip-address: true
         health-check-interval: 10s
         instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
         health-check-path: ${server.servlet.context-path}/health
+    loadbalancer:
+      ribbon:
+        enabled: false
+  main:
+    allow-bean-definition-overriding: true
+hoxton:
+   user: hoxton-user
+   goods: hoxton-goods
+feign:
+  client:
+    config:
+
+  okhttp:
+    enabled: true

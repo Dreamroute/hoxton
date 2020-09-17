@@ -23,7 +23,6 @@ public class HoxtonUser {
 
     @RequestMapping("/health")
     public boolean health() {
-        System.err.println(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd:hh:mm:ss")));
         return true;
     }
 

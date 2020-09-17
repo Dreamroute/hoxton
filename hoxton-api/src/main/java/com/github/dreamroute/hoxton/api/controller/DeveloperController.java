@@ -1,7 +1,6 @@
 package com.github.dreamroute.hoxton.api.controller;
 
-import com.github.dreamroute.hoxton.service.User;
-import com.github.dreamroute.hoxton.service.UserResource;
+import com.github.dreamroute.hoxton.service.DeveloperResource;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,15 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @AllArgsConstructor
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/developer")
+public class DeveloperController {
 
-    private UserResource userResource;
+    private DeveloperResource developerResource;
 
     @GetMapping("/selectById")
     String selectById(Long id) {
-        User user = User.builder().id(100L).name("w.dehai").build();
-        return userResource.selectById(user);
+        return developerResource.selectById();
     }
 
 }
